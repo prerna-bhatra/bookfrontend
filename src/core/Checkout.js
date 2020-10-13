@@ -84,6 +84,15 @@ const Checkout=({products})=>{
 			})
 	}
 	
+	const showSuccess=(success)=>
+	{
+		return(
+		<div className="alert alert-info">
+		
+			Order confirmed
+		</div>
+	)
+	}
 
 	const handleCod=(cashod)=>
 	{
@@ -101,6 +110,7 @@ const Checkout=({products})=>{
 		}
 		
 	}
+
 
 	const showDropIn=()=>{
 		return (
@@ -121,7 +131,7 @@ const Checkout=({products})=>{
 			<hr/>
 			<p>or</p>
 			<hr/>
-			<button onClick={handleCod}>
+			<button onClick={handleCod} onMouseUp={showSuccess}>
 			Cash on delivery
 			</button>	
 		
@@ -137,7 +147,7 @@ const Checkout=({products})=>{
 
 
 	const getTotal=()=>{
-		//total number of values
+		///total number of values
 		//reduce method is used to calculate
 		return products.reduce((currval,nextval)=>{
 			return currval+nextval.count*nextval.price
@@ -154,22 +164,12 @@ const Checkout=({products})=>{
 	)
 
 
-	const showSuccess=(success)=>(
-		<div className="alert alert-info">
-			if(success)
-			{
-				{success}
-			}
-		</div>
-	)
+	
 
 	return <div>
 	<h6>Total payment:${getTotal()}</h6>
-
-	
-		{showCheckout()}
-		
-		
+	{showSuccess()}
+	{showCheckout()}	
 	</div>
 
 

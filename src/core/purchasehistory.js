@@ -58,10 +58,18 @@ const PurchaseHistory=()=>{
 										Contact:{o.contact}
 									</li>
 									<li className="list-group-item">
-										Prodcut:{o.products[0].name}
+										Prodcut:{o.products.map((name, index) => {
+											return (
+                                                  <li>{name.name}</li>
+											)
+										})}
 									</li>
 									<li className="list-group-item">
-										Prodcut Price:{o.products[0].price}
+										Prodcut Price:{o.products.map((name, index) => {
+											return (
+                                                  <li>{name.price}</li>
+											)
+										})}
 									</li>
 									<li className="list-group-item">
 										Order Date:{o.createdAt}

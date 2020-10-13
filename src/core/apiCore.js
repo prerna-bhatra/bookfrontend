@@ -157,7 +157,7 @@ export const createOrdercod=(userId,createOrderData)=>{
 
 
 export const listOrders=(userId,token)=>{
-	return fetch(`${BASE_URL}/api/order/list/${userId}`,{
+	return fetch(`${BASE_URL}/order/list/${userId}`,{
 		method:"GET",
 		headers:{
 				Accept:"application/json",
