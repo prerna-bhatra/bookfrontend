@@ -19,7 +19,7 @@ const Home=()=>{
 			else
 			{
 				setProductsBysell(data)
-				console.log(productsBysell)
+				//console.log(productsBysell)
 			}
 		})
 	}
@@ -36,7 +36,6 @@ const Home=()=>{
 			<div className="row">
 			{productsBysell.map((product,i)=>(<div key={i} className="col-4 mb-3">
 			<Card  product={product} />
-
 				</div>
 				))}
 			</div>
