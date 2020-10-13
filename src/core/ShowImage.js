@@ -3,7 +3,7 @@ import {BASE_URL} from "../config.js"
 
 
 const ShowImage=(item)=>{
-const image1=`${BASE_URL}/api/product/photo/5f7f50ce275a8612ecea5ebd`
+const image1=`${BASE_URL}/product/photo/5f7f50ce275a8612ecea5ebd`
 
 	return (
 	<div className="product-img">
