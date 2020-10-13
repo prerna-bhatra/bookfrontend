@@ -26,7 +26,7 @@ const Signin=()=>{
 			setValues({...values,error:false,loading:true})
 			signin({email,password})
 			.then(data=>{
-				if(data.err || email==='' ||  password==='')
+				if(!data || email==='' ||  password==='')
 				{
 					setValues({...values,error:"Invalid credentials or server error",loading:false})
 				}

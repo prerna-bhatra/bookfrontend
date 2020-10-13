@@ -1,7 +1,10 @@
+import {BASE_URL} from "../config.js"
+
+
 import queryString from 'query-string'
 
 export const getProducts=(sortBy)=>{
-	return fetch(`http://localhost:8000/api/products?sortBy==${sortBy}&order=desc`,{
+	return fetch(`${BASE_URL}/products?sortBy==${sortBy}&order=desc`,{
 		method:"GET",
 
 	})
@@ -19,7 +22,7 @@ export const getProducts=(sortBy)=>{
 
 
 export const getCategories=()=>{
-	return fetch(`http://localhost:8000/api/categories`,{
+	return fetch(`${BASE_URL}/categories`,{
 		method:"GET",
 
 	})
@@ -35,7 +38,7 @@ export const getCategories=()=>{
 }
 
 export const read=(productId)=>{
-	return fetch(`http://localhost:8000/api/product/${productId}`,{
+	return fetch(`${BASE_URL}/product/${productId}`,{
 		method:"GET",
 
 	})
@@ -53,7 +56,7 @@ export const read=(productId)=>{
 export const list=params=>{
 	const query=JSON.stringify(params)
 	console.log('query',query)
-	return fetch(`http://localhost:8000/api/products/search?${query}`,{//it is correct till here
+	return fetch(`${BASE_URL}/products/search?${query}`,{//it is correct till here
 		method:"GET",
 	})
 	.then(response=>{
@@ -68,7 +71,7 @@ export const list=params=>{
 
 export const getBraintreeClientToken=(userId,token)=>{
 	
-	return fetch(`http://localhost:8000/api/braintree/getToken/${userId}`,{//it is correct till here
+	return fetch(`https://ancient-peak-77982.herokuapp.com/api/braintree/getToken/${userId}`,{//it is correct till here
 		method:"GET",
 		headers:{
 			"Content-Type":"application/json",
@@ -87,7 +90,7 @@ export const getBraintreeClientToken=(userId,token)=>{
 
 export const processPayment=(userId,token,paymentdata)=>{
 	
-	return fetch(`http://localhost:8000/api/braintree/payment/${userId}`,{//it is correct till here
+	return fetch(`https://ancient-peak-77982.herokuapp.com/api/braintree/payment/${userId}`,{//it is correct till here
 		method:"POST",
 		headers:{
 			"Content-Type":"application/json",
@@ -108,7 +111,7 @@ export const processPayment=(userId,token,paymentdata)=>{
 
 export const createOrder=(userId,token,createOrderData)=>{
 	
-	return fetch(`http://localhost:8000/api/order/create/${userId}`,{//it is correct till here
+	return fetch(`${BASE_URL}/api/order/create/${userId}`,{//it is correct till here
 		method:"POST",
 		headers:{
 			"Content-Type":"application/json",
@@ -130,7 +133,7 @@ export const createOrder=(userId,token,createOrderData)=>{
 
 export const createOrdercod=(userId,createOrderData)=>{
 	
-	return fetch(`http://localhost:8000/api/order/create/${userId}`,{//it is correct till here
+	return fetch(`${BASE_URL}/order/create/${userId}`,{//it is correct till here
 		method:"POST",
 		headers:{
 			"Content-Type":"application/json"
@@ -154,7 +157,7 @@ export const createOrdercod=(userId,createOrderData)=>{
 
 
 export const listOrders=(userId,token)=>{
-	return fetch(`http://localhost:8000/api/order/list/${userId}`,{
+	return fetch(`${BASE_URL}/api/order/list/${userId}`,{
 		method:"GET",
 		headers:{
 				Accept:"application/json",

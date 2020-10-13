@@ -18,7 +18,7 @@ const Search=()=>{
 	const loadCategories=()=>
 	{
 		getCategories().then(data=>{
-			if(data.error)
+			if(!data)
 			{
 				console.log("error")
 			}

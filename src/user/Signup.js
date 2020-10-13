@@ -26,7 +26,7 @@ const Signup=()=>{
 			
 			signup({name,email,password,contact,address})
 			.then(data=>{
-				if(data.err || email==='')
+				if(!data || email==='')
 				{
 					setValues({...values,error:"error",success:false})
 				}

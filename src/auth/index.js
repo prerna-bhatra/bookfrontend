@@ -1,7 +1,7 @@
 export const signup=(user)=>{
 		//console.log(name,email,password)
 
-		return fetch(`http://localhost:8000/api/signup`,{
+		return fetch(`https://ancient-peak-77982.herokuapp.com/api/signup`,{
 			method:"POST",
 			headers:{
 				 'Content-Type': 'application/json'
@@ -18,10 +18,12 @@ export const signup=(user)=>{
 	}
 
 
+
+
 export const signin=(user)=>{
 		//console.log(name,email,password)
 
-		return fetch(`http://localhost:8000/api/signin`,{
+		return fetch(`https://ancient-peak-77982.herokuapp.com/api/signin`,{
 			method:"POST",
 			headers:{
 				 'Content-Type': 'application/json'
@@ -52,7 +54,7 @@ export const signout=(next)=>{
 if(typeof window!=='undefinced'){
 		localStorage.removeItem('jwt')
 		next()
-		return fetch(`http://localhost:8000/api/signout`,{
+		return fetch(`https://ancient-peak-77982.herokuapp.com/api/signout`,{
 			method:"GET",
 		})
 		.then(response=>{

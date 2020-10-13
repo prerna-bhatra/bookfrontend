@@ -1,8 +1,9 @@
 import React from 'react'
+import {BASE_URL} from "../config.js"
 
 
 const ShowImage=(item)=>{
-const image1=`http://localhost:8000/api/product/photo/5f7f50ce275a8612ecea5ebd`
+const image1=`${BASE_URL}/api/product/photo/5f7f50ce275a8612ecea5ebd`
 
 	return (
 	<div className="product-img">

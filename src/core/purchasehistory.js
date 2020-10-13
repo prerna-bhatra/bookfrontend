@@ -13,9 +13,9 @@ const PurchaseHistory=()=>{
 	{
 		listOrders(user._id,token)
 		.then(data=>{
-			if(data.error)
+			if(!data)
 			{
-				console.log(data.error)
+				console.log("error")
 			}
 			else
 			{

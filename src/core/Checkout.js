@@ -29,9 +29,9 @@ const Checkout=({products})=>{
 	const getToken=(userId,token)=>{
 		getBraintreeClientToken(userId,token)
 		.then(data=>{
-			if(data.error)
+			if(!data)
 			{
-				setData({...data,error:data.error})
+				setData({...data,error:"erro in cart"})
 			}
 			else
 			{

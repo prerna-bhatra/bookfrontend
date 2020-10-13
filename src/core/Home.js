@@ -12,9 +12,9 @@ const Home=()=>{
 	{
 		getProducts('sold')
 		.then(data=>{
-			if(data.error)
+			if(!data)
 			{
-				setError(data.error)
+				setError("error in Home")
 			}
 			else
 			{
