@@ -34,7 +34,7 @@ const Home=()=>{
 				<Search />
 			<h2 className="mb-4">Best Booksellers</h2>
 			<div className="row">
-			{productsBysell.map((product,i)=>(<div key={i} className="col-4 mb-3">
+			{productsBysell.map((product,i)=>(<div key={i} className="col-md-4 mb-3">
 			<Card  product={product} />
 				</div>
 				))}

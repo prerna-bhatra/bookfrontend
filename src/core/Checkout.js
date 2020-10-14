@@ -168,7 +168,6 @@ const Checkout=({products})=>{
 
 	return <div>
 	<h6>Total payment:${getTotal()}</h6>
-	{showSuccess()}
 	{showCheckout()}	
 	</div>
 
