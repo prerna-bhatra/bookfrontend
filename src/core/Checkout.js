@@ -107,6 +107,9 @@ const Checkout=({products})=>{
 			contact:userCon
 		}
 		createOrdercod(userId,createOrderData)
+			.then((data,err)=>{
+			window.alert("order placed !Keep Shopping")
+		})
 		}
 		
 	}
